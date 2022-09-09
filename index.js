@@ -254,16 +254,17 @@ Use listOfNames to do the following:
       artistNames.push(array[i].name);
     }
     return artistNames
-    // const namesOnly = [];
+    
+   }
+   console.log(listOfNames(artists));
+  //  working code, but not the code needed
+ // const namesOnly = [];
     // for (let i = 0; i < array.length; i++) {
     //  if (array[i].includes('a')) {
     //   namesOnly.push(array[i]);
     //  }
     // }
     // return namesOnly
-   }
-   console.log(listOfNames(artists));
- 
  
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -276,10 +277,11 @@ Use removeArtist to do the following:
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
 function removeArtist(array,index) {
-//  const newArtistList = [...array];
-
+ const newArtistList = [...array];
+ newArtistList.splice(index,1);
+return newArtistList
 }
-
+console.log(removeArtist(artists,4));
 
 
 
@@ -300,14 +302,17 @@ Use addArtist to do the following:
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
 function addArtist(array, id, age, type, race, info) {
- array[index].name= id;
- array[index].years= age;
- array[index].genre= type;
- array[index].nationality= race;
- array[index].bio= info;
- return array[index]
+  const newArtist = [...array]
+ newArtist.push({
+ name: id, 
+ years: age, 
+ genre: type, 
+ nationality: race, 
+ bio: info});
+ 
+ return newArtist
 }
-// console.log(addArtist(artist,))
+console.log(addArtist(artists,'Cassandra Byrge', '1992-2022', 'Full Stack Development', 'Caucasion', 'I have experience in customer service. I am attending Bloomtech to advance in a better career '));
 
 
 
@@ -319,9 +324,18 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(array) {
+ let busyArtists = [];
+ for (let i = 0; i< array.length; i++){
+  if (array[i].paintings > 100){
+    busyArtists.push(array[i].name);
+  }
+ }
+  return busyArtists
+
 }
+console.log(lotsOfArt(artists));
+
 
 
 
@@ -335,10 +349,16 @@ Use artistInfo to do the following:
   "Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."
 */
 
-function artistInfo(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistInfo(array, artist){
+ let artistFacts = [];
+    for (let i = 0; i < array.length; i++) {
+     if (array[i].includes(artist)) {
+      artistFacts.push(array[i]);
+     }
+    }
+    return namesOnly
 }
-
+console.log(artistInfo(artists, 'El Greco')
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
