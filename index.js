@@ -350,9 +350,16 @@ Use artistInfo to do the following:
 */
 
 function artistInfo(array, artistName){
- 
-}
-// console.log(artistInfo(artists, 'Ed Greco'))
+  let artistBio = [];
+  for(let i = 0; i <array.length; i++){
+    if(array[i].bio.includes(artistName)){
+      artistBio.push(array[i].bio);
+    }
+  } return artistBio
+ }
+ console.log(artistInfo(artists, 'Kazimir'));
+    
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistByCountry to do the following: 
