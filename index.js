@@ -209,18 +209,18 @@ Practice accessing data above by console.log-ing following items:
 
 //(1) Name of the first artist (0th index) in the array
 
-console.log(artists[0].name);
+// console.log(artists[0].name);
 
 //(2) Bio of the third artist (2nd index) in the array 
 
-console.log(artists[2].bio);
+// console.log(artists[2].bio);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 (not auto tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
 artists[9].name = 'Vincent Van Gogh'
-console.log(artists[9].name);
+// console.log(artists[9].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -234,7 +234,7 @@ Use getArtistByIndex to do the following:
 function getArtistByIndex(array, number) {
   return `the artist at index ${[number]} is ${array[number].name}`
 }
-console.log(getArtistByIndex(artists, 4));
+// console.log(getArtistByIndex(artists, 4));
 
 
 
@@ -247,16 +247,24 @@ Use listOfNames to do the following:
 */
 
 
-function listOfNames(array) {
-  const namesOnly = [];
-  for (let i = 0; i < array.length; i++) {
-   if (array[i].includes('a')) {
-    namesOnly.push(array[i]);
+
+  function listOfNames(array) {
+    const artistNames = [];
+    for(let i = 0; i < array.length; i++){
+      artistNames.push(array[i].name);
+    }
+    return artistNames
+    // const namesOnly = [];
+    // for (let i = 0; i < array.length; i++) {
+    //  if (array[i].includes('a')) {
+    //   namesOnly.push(array[i]);
+    //  }
+    // }
+    // return namesOnly
    }
-  }
-  return namesOnly
- }
- console.log(listOfNames(artists));
+   console.log(listOfNames(artists));
+ 
+ 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
@@ -267,8 +275,9 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist() {
-  
+function removeArtist(array,index) {
+//  const newArtistList = [...array];
+
 }
 
 
@@ -290,9 +299,15 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist() {
- 
+function addArtist(array, id, age, type, race, info) {
+ array[index].name= id;
+ array[index].years= age;
+ array[index].genre= type;
+ array[index].nationality= race;
+ array[index].bio= info;
+ return array[index]
 }
+// console.log(addArtist(artist,))
 
 
 
