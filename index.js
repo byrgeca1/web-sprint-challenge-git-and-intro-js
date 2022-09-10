@@ -352,11 +352,11 @@ Use artistInfo to do the following:
 function artistInfo(array, artistName){
   let artistBio = [];
   for(let i = 0; i <array.length; i++){
-    if(array[i].bio.includes(artistName)){
-      artistBio.push(array[i].bio);
-    }
-  } return artistBio
- }
+      if (array[i].name == artistName) {
+        return array[i].bio
+     }
+  }
+}
  console.log(artistInfo(artists, 'Kazimir'));
     
 
